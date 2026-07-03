@@ -51,6 +51,7 @@
     killall
     lsof
     nmon
+    markdownlint-cli2
     oh-my-zsh
     picocom
     starship
