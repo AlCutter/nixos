@@ -21,6 +21,7 @@ in
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../module/dev
       (modulesPath + "/virtualisation/proxmox-lxc.nix")
     ];
 
