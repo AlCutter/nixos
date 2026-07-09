@@ -6,11 +6,11 @@
 }:
 stdenv.mkDerivation {
   pname = "antigravity-cli";
-  version = "1.0.0";
+  version = "1.1.0";
 
   src = fetchurl {
-    url = "https://storage.googleapis.com/antigravity-public/antigravity-cli/1.0.0-5288553236791296/linux-x64/cli_linux_x64.tar.gz";
-    hash = "sha512-XM3MAfuGPH6OVkc8bJXbp1/tT9KiQiANgM/Ex/q4Ebcz9af6slMyEwqtKY5yYn4QGOaRGlZY9PBZ724BnyEZcg==";
+    url = "https://github.com/google-antigravity/antigravity-cli/releases/download/1.1.0/agy_cli_linux_x64.tar.gz";
+    hash = "sha256:7ee512440af5ed0c819065cd7cc14eec90699214df4be32280ac346f0100577e";
   };
 
   # The source is a tarball containing the binary directly
