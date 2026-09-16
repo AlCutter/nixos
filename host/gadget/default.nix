@@ -192,6 +192,7 @@ in
     curl
     delta
     difftastic
+    dig
     docker
     figlet
     fzf
