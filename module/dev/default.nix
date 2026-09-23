@@ -49,6 +49,7 @@
     ispell
     jujutsu
     killall
+    lean4
     lsof
     nmon
     markdownlint-cli2
