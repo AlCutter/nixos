@@ -7,8 +7,8 @@
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
-      withPython3 = false;
       withRuby = false;
+      withPython3 = true;
       
       #package = pkgs.unstable.neovim-unwrapped;
     };

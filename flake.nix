@@ -2,6 +2,9 @@
   description = "Al's NixOS flake";
 
   inputs = {
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
     nixpkgs = {
       #url = "github:NixOS/nixpkgs/nixos-25.11";
       url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -12,8 +15,15 @@
     };
   };
 
-  outputs = { nixpkgs, agypkg, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, agypkg, home-manager, ... }: {
     nixosConfigurations = {
+      altered = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit nixpkgs; inputs = inputs; };
+        modules = [
+          ./host/altered
+        ];
+      };
       Gadget = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
