@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ...}:
+{ config, lib, pkgs, inputs, ...}:
 
 {
   programs = {
@@ -62,6 +62,8 @@
     wget
 
     zsh-vi-mode
+
+    inputs.opencode-v2.packages.${pkgs.system}.default
   ];
 
   nixpkgs.config.allowUnfree = true;

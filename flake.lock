@@ -116,12 +116,47 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1790463110,
+        "narHash": "sha256-hKlVl12B1dF0Q5vd9dY3lIJM5mFGWYSlXwSLAqHZ1+s=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e158d9ed9b51c98974c5e66e1ba1c9e0255fecaa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "opencode-v2": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1792157919,
+        "narHash": "sha256-wXP4Xe9HlaDqk0FT0cdinObtKcZ2MRAqCQZT9se2p58=",
+        "owner": "aijorgenson",
+        "repo": "opencode-v2-cli-nixos",
+        "rev": "f652c5f9a712df79f5859aed199240998b52c905",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aijorgenson",
+        "repo": "opencode-v2-cli-nixos",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agypkg": "agypkg",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_3",
+        "opencode-v2": "opencode-v2"
       }
     },
     "systems": {

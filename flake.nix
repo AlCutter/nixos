@@ -2,20 +2,16 @@
   description = "Al's NixOS flake";
 
   inputs = {
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware/master";
-    };
-    nixpkgs = {
-      #url = "github:NixOS/nixpkgs/nixos-25.11";
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     agypkg = {
       url = "./pkgs/agy";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    opencode-v2.url = "github:aijorgenson/opencode-v2-cli-nixos";
   };
 
-  outputs = inputs@{ nixpkgs, agypkg, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, agypkg, opencode-v2, home-manager, ... }: {
     nixosConfigurations = {
       altered = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -26,6 +22,7 @@
       };
       Gadget = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit nixpkgs; inputs = inputs; };
         modules = [
           ./host/gadget
           {
