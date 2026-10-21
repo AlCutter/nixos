@@ -217,7 +217,6 @@ in
 
     impala
     wl-clipboard
-    gtk-engine-murrine
     sassc
 
     alacritty
@@ -291,17 +290,15 @@ in
     orca-slicer
 
     lean4
-    (coq.withPackages (
-		ps: with ps; [
-		coq-lsp
-		coqutil
-		ExtLib
-		stdpp
-		ITree
-		bignums
-		stdlib
-	 ]))
-
+    rocq-core_9_3
+    rocqPackages.bignums
+    rocqPackages.coq-lsp
+    rocqPackages.coqutil
+    # rocqPackages.Extlib
+    rocqPackages.stdlib
+    rocqPackages.stdpp
+    rocqPackages.ITree
+    rocqPackages.wasmcert
   ];
 
   nixpkgs.config = {
