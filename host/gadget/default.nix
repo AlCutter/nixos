@@ -216,7 +216,7 @@ in
     protobuf_pkgs.protobuf3_20
     protoc_pkgs.protoc-gen-go
     */
-    qemu_full
+    # qemu_full
     rpl
     rustc
     sqlite
