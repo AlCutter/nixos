@@ -29,6 +29,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit nixpkgs; inputs = inputs; };
         modules = [
+          ./host/base
           ./host/altered
         ];
       };
@@ -36,6 +37,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit nixpkgs; inputs = inputs; };
         modules = [
+          ./host/base
           ./host/gadget
           {
             environment.systemPackages = [
@@ -47,6 +49,7 @@
       dangernix = nixpkgs.lib.nixosSystem {
         system = "aarch64-linux";
         modules = [
+          ./host/base
           ./host/utm
 #          home-manager.nixosModules.home-manager
 #          {

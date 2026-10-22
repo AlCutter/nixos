@@ -51,7 +51,7 @@ in
       experimental-features = nix-command flakes
     '';
 
-    settings.extra-experimental-features = "nix-command";
+    settings.extra-experimental-features = ["nix-command"];
   };
 
   networking.hostName = "GadgetNix"; # Define your hostname.
@@ -121,15 +121,7 @@ in
 
   programs = {
   
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-      withPython3 = false;
-      withRuby = false;
-      #package = pkgs.neovim-unwrapped;
-    };
+    neovim.enable = true; # config in base.
     
     zsh = {
       enable = true;
@@ -203,7 +195,7 @@ in
     git
     gnumake
     google-cloud-sdk
-    go_1_25
+    go_1_27
     golangci-lint
     gopls
     hurl
