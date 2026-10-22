@@ -263,7 +263,7 @@ in
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    allowSFTP = false;
+    allowSFTP = true;
     ports = [22];
 
     # https://infosec.mozilla.org/guidelines/openssh#modern-openssh-67
