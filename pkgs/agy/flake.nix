@@ -49,7 +49,7 @@
       }
     )
     // {
-      version = "1.2.3";
+      version = "1.4.7";
 
       # Overlay for easy integration into NixOS configurations
       overlays.default = final: prev: {
