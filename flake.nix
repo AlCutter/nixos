@@ -20,16 +20,22 @@
       url = "./pkgs/agy";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Until the brave packgae reappears in unstable...
+    brave = {
+      url = "git+https://codeberg.org/buckley310/brave-browser-nix?ref=main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     ghostty.url = "github:ghostty-org/ghostty";
     opencode-v2.url = "github:aijorgenson/opencode-v2-cli-nixos";
   };
 
-  outputs = inputs@{ nixpkgs, agypkg, ghostty, opencode-v2, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, agypkg, brave, ghostty, opencode-v2, home-manager, ... }: {
     nixosConfigurations = {
       altered = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit nixpkgs; inputs = inputs; };
         modules = [
+          brave.nixosModules.default
           ./host/base
           ./host/altered
         ];

@@ -272,7 +272,7 @@ in
     wget
     neovim
 
-    mplayer
+    #mplayer
     vlc
 
     unzip
