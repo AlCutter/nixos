@@ -156,7 +156,7 @@ in
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
-    
+
     zsh = {
       enable = true;
       ohMyZsh = {
@@ -188,6 +188,9 @@ in
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
+    #inputs.ghostty.packages.${system}.default
+    ghostty
+    browsh
     brave
 
     usbutils
@@ -220,7 +223,6 @@ in
     sassc
 
     alacritty
-    brave
     btop
     chromium
     clang    

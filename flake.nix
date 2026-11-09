@@ -20,10 +20,11 @@
       url = "./pkgs/agy";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty.url = "github:ghostty-org/ghostty";
     opencode-v2.url = "github:aijorgenson/opencode-v2-cli-nixos";
   };
 
-  outputs = inputs@{ nixpkgs, agypkg, opencode-v2, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, agypkg, ghostty, opencode-v2, home-manager, ... }: {
     nixosConfigurations = {
       altered = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
